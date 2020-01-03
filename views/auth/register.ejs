@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Shop</title>
+	<link rel="stylesheet" type="text/css" href="/css/Style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+	<a id="topBtn">
+		<i class="fas fa-arrow-circle-up"></i>
+	</a>
+	<div class="header" id="top">
+		<nav class="nav">
+			<div class="logo">
+				<h4>BOOK STORE</h4>
+			</div>
+			<ul class="nav-links">
+				<li><a href="/">HOME <i class="fas fa-chevron-down"></i></a></li>
+				<li><a href="">ABOUT <i class="fas fa-chevron-down"></i></a>
+					
+					<ul class="child-links">
+						<li><a href="">ME</a></li>
+						<li><a href="">HISTORY</a></li>
+					</ul>
+					
+				</li>
+				<li><a href="">USER <i class="fas fa-chevron-down"></i></a>
+					<ul class="child-links">
+						<li><a href="/auth/login">LOGIN</a></li>
+						<li><a href="/auth/register">REGISTER</a></li>
+					</ul>
+				</li>
+				<li><a href="/product/cart">CART <i class="fas fa-cart-plus"></i></a></li>
+			</ul>
+			<div class="burger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+		</nav>
+	</div>
+    
+    <form novalidate action="" method="POST" id="registerForm">
+        <div class="card shadow" style="margin-top: 7%; margin: 7% 20%;">
+            <h5 class="card-header">
+            Register
+            </h5>
+            <div class="card-body">
+            <h5 class="mb-3">Account</h5>
+            <div class="form-group">
+                <label for="txtUsername">Username</label>
+                <input type="text" class="form-control" id="txtUsername" name="username" autofocus>
+            </div>
+            <div class="form-group">
+                <label for="txtPassword">Password</label>
+                <input type="password" class="form-control" id="txtPassword" name="password">
+            </div>
+            <div class="form-group">
+                <label for="txtConfirm">Confirm</label>
+                <input type="password" class="form-control" id="txtConfirm" name="confirm">
+            </div>
+        
+            <hr class="mb-4">
+            <h5 class="mb-3">Information</h5>
+            <div class="form-group">
+                <label for="txtName">Name</label>
+                <input type="text" class="form-control" id="txtName" name="name">
+            </div>
+            <div class="form-group">
+                <label for="txtEmail">Email</label>
+                <input type="text" class="form-control" id="txtEmail" name="email">
+            </div>
+            <div class="form-group">
+                <label for="txtDOB">Date of birth</label>
+                <input type="text" class="form-control" id="txtDOB" name="dob">
+            </div>
+            </div>
+            <div class="card-footer text-right">
+            <button type="submit" class="btn btn-lg btn-success btn-block">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Register
+            </button>
+            </div>
+        </div>
+    </form>
+
+	<footer>
+		<div class=" footer" style="margin-top: 5rem;">
+			<div class="row">
+				<div class="col-4">
+					<h4 class="text-white text-center title-footer">Dịch vụ</h4>
+					<ul class="list-group list-group-flush list-footer">
+						<li class="list-group-item">
+							<a href="" class="Name-Product-1">Điều khoản sử dụng</a>
+						</li>
+						<li class="list-group-item">
+							<a href="" class="Name-Product-1">Chính sách bảo mật</a>
+						</li>
+						<li class="list-group-item">
+							<a href="" class="Name-Product-1">Giới thiệu</a>
+						</li>
+						<li class="list-group-item">
+							<a href="" class="Name-Product-1">Hệ thống trung tâm cửa hàng</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-4">
+					<h4 class="text-white text-center title-footer" >Hỗ trợ</h4>
+					<ul class="list-group list-group-flush list-footer">
+						<li class="list-group-item">
+							<a href="" class="Name-Product-1">Chính sách khuyến mãi</a>
+						</li>
+						<li class="list-group-item">
+							<a href="" class="Name-Product-1">Phương thức thanh toán</a>
+						</li>
+						<li class="list-group-item">
+							<a href="" class="Name-Product-1">Phương thức vận chuyển</a>
+						</li>
+						<li class="list-group-item">
+							<a href="" class="Name-Product-1">Chính sách đổi trả</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-4">
+					<h4 class="text-white text-center title-footer">Liên hệ</h4>
+					<ul class="list-group list-group-flush list-footer">
+						<li class="list-group-item">
+							<i class="fas fa-map-marker-alt"></i>
+							<p>Địa chỉ: 595 CMT8 Phường 12 Quận 5 TPHCM</p>
+						</li>
+						<li class="list-group-item">
+							<i class="far fa-envelope"></i>
+							<p>1612694@student.hcmus.edu.vn</p>
+						</li>
+						<li class="list-group-item">
+							<i class="fas fa-phone"></i>
+							<p>0123456789</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-6">
+					<div class="quote-primary">
+						<img src="/images/logo.jpg" class="logo-footer" alt="">
+					</div>
+				</div>
+				<div class="col-6">
+					<h4 class="text-white text-center title-footer">Follow us</h4>
+					<div class="text-center">
+						<a href="" class="icon-footer">
+							<i class="fab fa-facebook"></i>
+						</a>
+						<a href="" class="icon-footer">
+							<i class="fab fa-instagram"></i>
+						</a>
+						<a href="" class="icon-footer">
+							<i class="fab fa-twitter"></i>
+						</a>
+						<a href="" class="icon-footer">
+							<i class="fab fa-google-plus-g"></i>
+						</a>
+					</div>
+					<p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum enim iusto laudantium sed officiis pariatur facilis repellendus doloribus omnis consequuntur cupiditate quas minus doloremque nihil perferendis libero qui, quae magni.</p>
+					<p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum enim iusto laudantium sed officiis pariatur facilis repellendus doloribus omnis consequuntur cupiditate quas minus doloremque nihil perferendis libero qui, quae magni.</p>
+					<p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum enim iusto laudantium sed officiis pariatur facilis repellendus doloribus omnis consequuntur cupiditate quas minus doloremque nihil perferendis libero qui, quae magni.</p>
+					<p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum enim iusto laudantium sed officiis pariatur facilis repellendus doloribus omnis consequuntur cupiditate quas minus doloremque nihil perferendis libero qui, quae magni.</p>
+					<p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum enim iusto laudantium sed officiis pariatur facilis repellendus doloribus omnis consequuntur cupiditate quas minus doloremque nihil perferendis libero qui, quae magni.</p>
+				</div>
+			</div>
+		</div>
+	</footer>	
+	
+	<script>
+		$(document).ready(function(){
+
+			$(window).scroll(function(){
+				if($(this).scrollTop() > 40) 
+				{
+					$("#topBtn").fadeIn();
+				}else
+				{
+					$("#topBtn").fadeOut();
+				}
+			});
+
+			$("#topBtn").click(function(){
+				$("html,body").animate({scrollTop: 0},800);
+			});
+		})
+    </script>
+    <script>
+        $(function () {
+            $("#txtDOB").datetimepicker({
+                format: 'd/m/Y',
+                timepicker: false,
+                mark: true
+            })
+
+            $("#registerForm").validate({
+                rules: {
+                    username: {
+                        required: true,
+						remote: {
+							url: '/auth/is-available'
+						}
+                    },
+                    password: {
+                        required: true,
+                        minlength: 6
+                    },
+                    confirm: {
+                        required: true,
+                        equalTo: $('[name="password"]')
+                    },
+                    name: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    dob: {
+                        required: true
+                    }
+                },
+                messages: {
+                    username: {
+                        required: "Vui lòng điền username"
+                    },
+                    password: {
+                        required: "Vui lòng điền password",
+                        minlength: "Password của bạn phải tối thiếu 6 kí tự"
+                    },
+                    confirm: {
+                        required: "Vui lòng xác nhận lại password",
+                        equalTo: "Mật khẩu xác nhận không phù hợp"
+                    },
+                    name: {
+                        required: "Vui lòng nhập tên"
+                    },
+                    email: {
+                        required: "Vui lòng nhập email",
+                        email: "Vui lòng nhập email"
+                    },
+                    dob: {
+                        required: "Vui lòng nhập ngày tháng năm sinh"
+                    }
+                },
+                errorElement: 'small',
+                errorClass: 'help-block text-danger',
+                highlight: function(e) {
+                    $(e).removeClass('is-valid').addClass('is-invalid');
+                },
+                unhighlight: function(e) {
+                    $(e).removeClass('is-invalid').addClass('is-valid');
+                }
+            })
+        })
+    </script>
+    <script src="/js/nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

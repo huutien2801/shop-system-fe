@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Shop</title>
+	<link rel="stylesheet" type="text/css" href="/css/Style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="/">THY BOUTIQUE</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/category">Loại sản phẩm</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/order">Đơn hàng</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/user">Người dùng</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/charity">Hoạt động</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/promotion">Khuyến mãi</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/product">Sản phẩm</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/history">Lịch sử chuyến đi</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="panel">
+		<div class="row panel-body" style="background-color: bisque;">
+			<div class="col-lg-12 text-center">
+				<h1>Danh sách khuyến mãi</h1>
+			</div>
+			<div class="col-lg-12">
+				<table class="table table-dark">
+					<thead>
+						<tr>
+							<th scope="col">Mã khuyến mãi</th>
+							<th scope="col">Tên khuyến mãi</th>
+							<th scope="col">Trạng thái</th>
+							<th scope="col">Ngày bắt đầu</th>
+							<th scope="col">Ngày kết thúc</th>
+							<th scope="col">Giá trị</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% for(var i=0; i < listPromotion.length; i++) { %>
+						<tr>
+							<th scope="row"><%= listPromotion[i].promotionCode %></th>
+							<td><%= listPromotion[i].promotionName %></td>
+							<td>
+								<% if(listPromotion[i].status == 'ACTIVE'){ %>
+									Đang sử dụng
+								<% } %>
+								<% if(listPromotion[i].status == 'INACTIVE'){ %>
+									Chưa kích hoạt
+								<% } %>
+								<% if(listPromotion[i].status == 'EXPIRED'){ %>
+									Hết hạn
+								<% } %>
+							</td>
+							<td><%= listPromotion[i].startTime %></td>
+							<td><%= listPromotion[i].finishTime %></td>
+							<td><%= listPromotion[i].valueDiscount %></td>
+							<td>
+								<button class="btn btn-primary">
+									Xóa
+								</button>
+								<button class="btn btn-success">
+									Update
+								</button>
+							</td>
+						</tr>
+						<% } %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row panel-body" style="margin-top:20px; background-color: bisque; padding-bottom: 20px;">
+			<div class="col-lg-12 text-center">
+				<h1>Tạo mã khuyến mãi</h1>
+			</div>
+			<div class="col-lg-12">
+				<form method="POST" style="background-color:#454d55;padding: 20px;">
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Mã khuyến mãi:</label>
+						<input type="text" class="form-control" name="code" id="code">
+					</div>
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Tên khuyến mãi:</label>
+						<input type="text" class="form-control" name="name" id="name">
+					</div>
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Ngày bắt đầu:</label>
+						<input type="date" class="form-control" name="startDate" id="startDate">
+					</div>
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Ngày kết thúc:</label>
+						<input type="date" class="form-control" name="endDate" id="endDate">
+					</div>
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Giá trị:</label>
+						<input type="int" class="form-control" name="value" id="value">
+					</div>
+					<div class="text-right">
+						<button type="submit" class="btn btn-primary">Thêm khuyến mãi</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

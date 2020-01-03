@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Shop</title>
+	<link rel="stylesheet" type="text/css" href="/css/Style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="/">THY BOUTIQUE</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/category">Loại sản phẩm</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/order">Đơn hàng</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/user">Người dùng</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/charity">Hoạt động</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/promotion">Khuyến mãi</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/product">Sản phẩm</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/history">Lịch sử chuyến đi</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="panel">
+		<div class="row panel-body" style="background-color: bisque;">
+			<div class="col-lg-12 text-center">
+				<h1>Danh sách sản phẩm</h1>
+			</div>
+			<div class="col-lg-12">
+				<table class="table table-dark">
+					<thead>
+						<tr>
+							<th scope="col">Tên sản phẩm</th>
+							<th scope="col">Giá sản phẩm</th>
+							<th scope="col">Giảm giá</th>
+							<th scope="col">Chất liệu</th>
+							<th scope="col">Loại sản phẩm</th>
+							<th scope="col">Số lượng tồn</th>
+							<th scope="col">Số lượng bán</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% for(var i=0; i < listProduct.length; i++) { %>
+						<tr>
+							<th scope="row"><%= listProduct[i].name %></th>
+							<td><%= listProduct[i].price %></td>
+							<td><%= listProduct[i].discount %></td>
+							<td><%= listProduct[i].material %></td>
+							<td><%= listProduct[i].categoryName %></td>
+							<td><%= listProduct[i].quantity %></td>
+							<td><%= listProduct[i].selledAmount %></td>
+						</tr>
+						<% } %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row panel-body" style="margin-top:20px; background-color: bisque; padding-bottom: 20px;">
+			<div class="col-lg-12 text-center">
+				<h1>Tạo sản phẩm</h1>
+			</div>
+			<div class="col-lg-12">
+				<form method="POST" id="productForm" style="background-color:#454d55;padding: 20px;">
+					<div class="form-group">
+						<label for="name" style="color: white;">Tên sản phẩm:</label>
+						<input type="text" name="name" class="form-control" id="name">
+					</div>
+					<div class="form-group">
+						<label for="price" style="color: white;">Giá sản phẩm:</label>
+						<input type="number" class="form-control" name="price" id="price">
+					</div>
+					<div class="form-group">
+						<label for="name-categor" style="color: white;">Giảm giá:</label>
+						<input type="number" class="form-control" name="discount" id="discount">
+					</div>
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Mô tả:</label>
+						<input type="text" class="form-control" name="description" id="description">
+					</div>
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Hình ảnh:</label>
+						<input type="text" class="form-control" name="image" id="image">
+					</div>
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Loại sản phẩm:</label>
+						<select class="form-control" name="categoryName" id="">
+							<% for(var i=0; i < listCategory.length; i++) { %>
+								<option value="<%= listCategory[i].name %>"><%= listCategory[i].name %></option>
+							<% } %>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Chất liệu:</label>
+						<input type="text" class="form-control" name="material" id="material">
+					</div>
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Màu:</label>
+						<input type="color" multiple class="form-control" name="colorCode" id="colorCode">
+						<input type="text" multiple class="form-control" name="colorName" id="colorName">
+					</div>
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Số lượng:</label>
+						<input type="number" class="form-control" name="quantity" id="quantity">
+					</div>
+					<div class="form-group">
+						<label for="name-category" style="color: white;">Size:</label>
+						<select name="size" class="form-control" multiple id="">
+							<option value="M">M</option>
+							<option value="L">L</option>
+							<option value="XL">XL</option>
+							<option value="XXL">XXL</option>
+						</select>
+						<!-- <input type="text" multiple class="form-control" name="size" id="size"> -->
+					</div>
+					<div class="text-right">
+						<button type="submit" id="btnAddProduct" class="btn btn-primary">Thêm sản phẩm</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

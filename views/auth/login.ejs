@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Shop</title>
+	<link rel="stylesheet" type="text/css" href="/css/Style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body style="overflow: hidden">
+    <div class="header" id="top" style="position: static;">
+        <nav class="nav">
+            <div class="logo">
+                <h4>BOOK STORE</h4>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">HOME <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="">ABOUT <i class="fas fa-chevron-down"></i></a>
+                    
+                    <ul class="child-links">
+                        <li><a href="">ME</a></li>
+                        <li><a href="">HISTORY</a></li>
+                       
+                    </ul>
+                    
+                </li>
+                <li><a href="">USER <i class="fas fa-chevron-down"></i></a>
+					<ul class="child-links">
+						<li><a href="/auth/login">LOGIN</a></li>
+						<li><a href="/auth/register">REGISTER</a></li>
+					</ul>
+				</li>
+                <li><a href="/product/cart">CART <i class="fas fa-cart-plus"></i></a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </div>
+    <div class="body-login">
+   
+       
+        <form action="" method="POST" class="form-login">
+            <h3 class="text-center">LOGIN</h3>
+            <% if(err_message != ''){ %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <%=err_message%>
+                </div>
+            <% } %>
+            <div class="form-login-group">
+                <input type="text" name="username" >
+                <label for="username" class="label">Username</label>
+            </div>
+            
+            <div class="form-login-group">
+                <input type="password" name="password" >
+                <label for="password" class="label">Password</label>
+            </div>
+           
+            <button class="btn-register">Login</button>
+            <a href="/auth/fb" style="margin-left: 20%;">Login with facebook</a>
+            <p>If you don't have account, press <a href="/auth/register">Register</a> </p>
+        </form>
+    </div>
+
+	
+	<script src="/js/nav.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
