@@ -62,6 +62,6 @@ app.use((err, req, res, next) => {
 		error
 	})
 })
-app.listen(port, function(){
+app.listen(process.env.PORT || port, function(){
 	console.log("Hello world on port 3000!")	
 });
