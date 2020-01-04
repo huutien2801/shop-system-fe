@@ -56,7 +56,7 @@ module.exports.manageProductPOST = function (req, res) {
     })
 };
 module.exports.manageProductDELETE = function (req, res) {
-    console.log(id)
+    var id = req.params.id;
     request.delete(`https://shop-system-api.herokuapp.com/product?${id}`,(err, response, body) => {
         if (err) {
             return console.log(err);
@@ -82,7 +82,8 @@ module.exports.manageCategory = function (req, res) {
 };
 
 module.exports.manageCategoryDELETE = function (req, res) {
-    console.log(id)
+    var id = req.params.id;
+
     request.delete(`https://shop-system-api.herokuapp.com/categories?${id}`,(err, response, body) => {
         if (err) {
             return console.log(err);
@@ -158,7 +159,7 @@ module.exports.manageCharityPOST = function (req, res) {
 };
 
 module.exports.manageCharityDELETE = function (req, res) {
-    console.log(id)
+    var id = req.params.id;
     request.delete(`https://shop-system-api.herokuapp.com/charity?${id}`,(err, response, body) => {
         if (err) {
             return console.log(err);
@@ -187,7 +188,7 @@ module.exports.manageOrder = function (req, res) {
     });
 };
 module.exports.manageOrderDELETE = function (req, res) {
-    console.log(id)
+    var id = req.params.id;
     request.delete(`https://shop-system-api.herokuapp.com/order?${id}`,(err, response, body) => {
         if (err) {
             return console.log(err);
@@ -217,7 +218,7 @@ module.exports.manageHistory = function (req, res) {
     });
 };
 module.exports.manageHistoryDELETE = function (req, res) {
-    console.log(id)
+    var id = req.params.id;
     request.delete(`https://shop-system-api.herokuapp.com/history?${id}`,(err, response, body) => {
         if (err) {
             return console.log(err);
@@ -277,7 +278,7 @@ module.exports.managePromotionPOST = function (req, res) {
  
 };
 module.exports.managePromotionDELETE = function (req, res) {
-    console.log(id)
+    var id = req.params.id;
     request.delete(`https://shop-system-api.herokuapp.com/promotion?${id}`,(err, response, body) => {
         if (err) {
             return console.log(err);
@@ -306,7 +307,6 @@ module.exports.manageUser = function (req, res) {
         });
     });
 };
-
 module.exports.manageUserPOST = function (req, res) {
    console.log(req.body)
     let dateOfBirth = new Date(req.body.dateOfBirth)
@@ -329,7 +329,7 @@ module.exports.manageUserPOST = function (req, res) {
     })
 };
 module.exports.manageUserDELETE = function (req, res) {
-    console.log(id)
+    var id = req.params.id;
     request.delete(`https://shop-system-api.herokuapp.com/user?${id}`,(err, response, body) => {
         if (err) {
             return console.log(err);
