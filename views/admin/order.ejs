@@ -58,7 +58,6 @@
 							<th scope="col">Mã đơn hàng</th>
 							<th scope="col">Khách hàng</th>
 							<th scope="col">NV giao hàng</th>
-							<th scope="col">Sản phẩm</th>
 							<th scope="col">Thời gian tạo</th>
 							<th scope="col">Thời gian giao</th>
 							<th scope="col">Trạng thái</th>
@@ -72,11 +71,6 @@
 								<th scope="row"><%= listOrder[i].orderCode %></th>
 								<td><%= listOrder[i].userName %></td>
 								<td><%= listOrder[i].shipper %></td>
-								<td>
-									<% for(var i=0; i < listOrder[i].products.length; i++) { %>
-										<%= listOrder[i].products[i].name %>
-									<% } %>
-								</td>
 								<td><%= listOrder[i].createdTime %></td>
 								<td><%= listOrder[i].deliverTime %></td>
 								<td>

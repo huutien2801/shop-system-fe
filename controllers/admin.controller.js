@@ -147,7 +147,6 @@ module.exports.manageOrder = function (req, res) {
                 element.createdTime = moment(element.createdTime).format("DD-MM-YYYY")
             });
         }
-        
         res.render("admin/order", {
             listOrder
         });
