@@ -64,12 +64,12 @@
 						<tr>
 							<td><%= listCategory[i].name %></td>
 							<td>
-								<button class="btn btn-primary">
+								<a href="/admin/category/id=<%= listCategory[i].id %>" class="btn btn-danger">
 									Xóa
-								</button>
-								<button class="btn btn-success">
-									Update
-								</button>
+								</a>
+								<a href="/admin/category/id=<%= listCategory[i].id %>" class="btn btn-success">
+									Cập nhật
+								</a>
 							</td>
 						</tr>
 						<% } %>

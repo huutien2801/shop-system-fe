@@ -85,12 +85,12 @@
 							<td><%= listPromotion[i].finishTime %></td>
 							<td><%= listPromotion[i].valueDiscount %></td>
 							<td>
-								<button class="btn btn-primary">
+								<a href="/admin/promotion/id=<%= listPromotion[i].id %>" class="btn btn-danger">
 									Xóa
-								</button>
-								<button class="btn btn-success">
-									Update
-								</button>
+								</a>
+								<a href="/admin/promotion/id=<%= listPromotion[i].id %>" class="btn btn-success">
+									Cập nhật
+								</a>
 							</td>
 						</tr>
 						<% } %>

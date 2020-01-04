@@ -55,6 +55,17 @@ module.exports.manageProductPOST = function (req, res) {
         res.redirect('/admin/product');
     })
 };
+module.exports.manageProductDELETE = function (req, res) {
+    console.log(id)
+    request.delete(`https://shop-system-api.herokuapp.com/product?${id}`,(err, response, body) => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log(response.body)
+        // console.log(listCategory)
+        res.redirect("/admin/category")
+    })
+};
 
 module.exports.manageCategory = function (req, res) {
     request('https://shop-system-api.herokuapp.com/categories', { json: true }, (err, response, body) => {
@@ -68,6 +79,18 @@ module.exports.manageCategory = function (req, res) {
             listCategory
         });
     });
+};
+
+module.exports.manageCategoryDELETE = function (req, res) {
+    console.log(id)
+    request.delete(`https://shop-system-api.herokuapp.com/categories?${id}`,(err, response, body) => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log(response.body)
+        // console.log(listCategory)
+        res.redirect("/admin/category")
+    })
 };
 
 module.exports.manageCategoryPOST = function (req, res) {
@@ -134,6 +157,17 @@ module.exports.manageCharityPOST = function (req, res) {
     })
 };
 
+module.exports.manageCharityDELETE = function (req, res) {
+    console.log(id)
+    request.delete(`https://shop-system-api.herokuapp.com/charity?${id}`,(err, response, body) => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log(response.body)
+        // console.log(listCategory)
+        res.redirect("/admin/charity")
+    })
+};
 module.exports.manageOrder = function (req, res) {
     request('https://shop-system-api.herokuapp.com/order', { json: true }, (err, response, body) => {
         if (err) {
@@ -151,6 +185,17 @@ module.exports.manageOrder = function (req, res) {
             listOrder
         });
     });
+};
+module.exports.manageOrderDELETE = function (req, res) {
+    console.log(id)
+    request.delete(`https://shop-system-api.herokuapp.com/order?${id}`,(err, response, body) => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log(response.body)
+        // console.log(listCategory)
+        res.redirect("/admin/order")
+    })
 };
 module.exports.manageHistory = function (req, res) {
     request('https://shop-system-api.herokuapp.com/history', { json: true }, (err, response, body) => {
@@ -170,6 +215,17 @@ module.exports.manageHistory = function (req, res) {
             listHistory
         });
     });
+};
+module.exports.manageHistoryDELETE = function (req, res) {
+    console.log(id)
+    request.delete(`https://shop-system-api.herokuapp.com/history?${id}`,(err, response, body) => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log(response.body)
+        // console.log(listCategory)
+        res.redirect("/admin/history")
+    })
 };
 module.exports.managePromotion = function (req, res) {
     request('https://shop-system-api.herokuapp.com/promotion', { json: true }, (err, response, body) => {
@@ -220,6 +276,17 @@ module.exports.managePromotionPOST = function (req, res) {
     })
  
 };
+module.exports.managePromotionDELETE = function (req, res) {
+    console.log(id)
+    request.delete(`https://shop-system-api.herokuapp.com/promotion?${id}`,(err, response, body) => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log(response.body)
+        // console.log(listCategory)
+        res.redirect("/admin/promotion")
+    })
+};
 module.exports.manageUser = function (req, res) {
     request('https://shop-system-api.herokuapp.com/user', { json: true }, (err, response, body) => {
         if (err) {
@@ -261,4 +328,14 @@ module.exports.manageUserPOST = function (req, res) {
         res.redirect("/admin/user")
     })
 };
-
+module.exports.manageUserDELETE = function (req, res) {
+    console.log(id)
+    request.delete(`https://shop-system-api.herokuapp.com/user?${id}`,(err, response, body) => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log(response.body)
+        // console.log(listCategory)
+        res.redirect("/admin/user")
+    })
+};

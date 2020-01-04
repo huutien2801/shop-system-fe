@@ -76,6 +76,14 @@
 							<td><%= listProduct[i].categoryName %></td>
 							<td><%= listProduct[i].quantity %></td>
 							<td><%= listProduct[i].selledAmount %></td>
+							<td>
+								<a href="/admin/product/id=<%= listProduct[i].id %>" class="btn btn-danger">
+									Xóa
+								</a>
+								<a href="/admin/product/id=<%= listProduct[i].id %>" class="btn btn-success">
+									Cập nhật
+								</a>
+							</td>
 						</tr>
 						<% } %>
 					</tbody>

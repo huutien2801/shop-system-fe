@@ -85,12 +85,12 @@
 							<td><%= listHistory[i].username %></td>
 							
 							<td>
-								<button class="btn btn-primary">
+								<a href="/admin/history/id=<%= listHistory[i].id %>" class="btn btn-danger">
 									Xóa
-								</button>
-								<button class="btn btn-success">
-									Update
-								</button>
+								</a>
+								<a href="/admin/history/id=<%= listHistory[i].id %>" class="btn btn-success">
+									Cập nhật
+								</a>
 							</td>
 						</tr>
 						<% } %>
