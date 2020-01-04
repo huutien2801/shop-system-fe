@@ -55,7 +55,6 @@
 				<table class="table table-dark">
 					<thead>
 						<tr>
-							<th scope="col">Mã đơn hàng</th>
 							<th scope="col">Khách hàng</th>
 							<th scope="col">NV giao hàng</th>
 							<th scope="col">Thời gian tạo</th>
@@ -68,7 +67,7 @@
 						<% if(listOrder.length > 0){ %>
 						<% for(var i=0; i < listOrder.length; i++) { %>
 							<tr>
-								<th scope="row"><%= listOrder[i].orderCode %></th>
+								
 								<td><%= listOrder[i].userName %></td>
 								<td><%= listOrder[i].shipper %></td>
 								<td><%= listOrder[i].createdTime %></td>
