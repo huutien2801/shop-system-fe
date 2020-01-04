@@ -72,7 +72,11 @@
 								<th scope="row"><%= listOrder[i].orderCode %></th>
 								<td><%= listOrder[i].userName %></td>
 								<td><%= listOrder[i].shipper %></td>
-								<td><%= listOrder[i].products %></td>
+								<td>
+									<% for(var i=0; i < listOrder[i].products.length; i++) { %>
+										<%= listOrder[i].products[i].name %>
+									<% } %>
+								</td>
 								<td><%= listOrder[i].createdTime %></td>
 								<td><%= listOrder[i].deliverTime %></td>
 								<td>
